@@ -166,6 +166,7 @@ def search(values):
     Returns:
         The values dictionary containing a solved sudoku or False if sudoku could not be solved
     """
+    global assignments
 
     # First, reduce the puzzle using the previous function
     values = reduce_puzzle(values)
@@ -211,7 +212,8 @@ def solve(grid):
 
 if __name__ == '__main__':
     diag_sudoku_grid = '2.............62....1....7...6..8...3...9...7...6..4...4....8....52.............3'
-    display(solve(diag_sudoku_grid))
+    diag_sudoku_grid2 = '9.1....8.8.5.7..4.2.4....6...7......5..............83.3..6......9................'
+    display(solve(diag_sudoku_grid2))
 
     try:
         from visualize import visualize_assignments
